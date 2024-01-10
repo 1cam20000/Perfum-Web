@@ -39,14 +39,14 @@ const Footer = () => {
         <div style={{ textAlign: "center", fontSize: "16px" }}>
           The FragranceX Difference
         </div>
-        <div className="content">
+        <div className="content" style={{ justifyContent: "space-between" }}>
           <div style={{ width: "240px", height: "120px", display: "flex" }}>
             <div className="imgbox">
               <img
                 src="https://img.fragrancex.com/images/assets/icons/fastfreeshipping.svg"
                 data-src="https://img.fragrancex.com/images/assets/icons/fastfreeshipping.svg"
                 alt="Same Day Free Shipping"
-                class=""
+                className=""
                 width="60"
                 height="60"
               />
@@ -65,7 +65,7 @@ const Footer = () => {
                 src="https://img.fragrancex.com/images/assets/icons/trusted.svg"
                 data-src="https://img.fragrancex.com/images/assets/icons/trusted.svg"
                 alt="Trusted since 2001"
-                class=""
+                className=""
                 width="60"
                 height="60"
               />
@@ -84,7 +84,7 @@ const Footer = () => {
                 src="https://img.fragrancex.com/images/assets/icons/safesecure.svg"
                 data-src="https://img.fragrancex.com/images/assets/icons/safesecure.svg"
                 alt="Safe &amp; Secure Checkout"
-                class=""
+                className=""
                 width="60"
                 height="60"
               />
@@ -102,7 +102,7 @@ const Footer = () => {
                 src="https://img.fragrancex.com/images/assets/icons/fivestar.svg"
                 data-src="https://img.fragrancex.com/images/assets/icons/fivestar.svg"
                 alt="5 Star Customer Ratings"
-                class=""
+                className=""
                 width="60"
                 height="60"
               />

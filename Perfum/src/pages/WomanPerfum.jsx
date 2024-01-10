@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import SIdebar from "../components/SIdebar";
+import MainContent from "../components/MainContent";
 
 const WomanPerfum = () => {
   return (
-    <div>WomanPerfum</div>
-  )
-}
+    <div style={{display:"flex"}} >
+      <SIdebar />
+      <MainContent />
+    </div>
+  );
+};
 
-export default WomanPerfum
+export default WomanPerfum;
