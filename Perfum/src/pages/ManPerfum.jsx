@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import SIdebar from "../components/SIdebar";
 import MainContent from "../components/MainContent";
+import { AppContext } from "../App";
 
 const ManPerfum = () => {
+  const { dataKey } = useContext(AppContext);
+
+  const [filteredProducts, setFilteredProducts] = useState(dataKey);
+
+  const applyFilters = (filters) => {
+    // Áp dụng bộ lọc vào danh sách sản phẩm
+    let filtered = dataKey;
+    if (filters.gender.length > 0) {
+      filtered = filtered.filter((product) =>
+        filters.gender.includes(product.gender)
+      );
+    }
+    if (filters.brand.length > 0) {
+      filtered = filtered.filter((product) =>
+        filters.brand.includes(product.brand)
+      );
+    }
+    setFilteredProducts(filtered);
+  };
+
   return (
-    <div style={{ margin: "20px" }}>
-      <div
-        style={{
-          color: "#21165e",
-          fontSize: "28px",
-          fontWeight: "400",
-          paddingBottom: "4px",
-        }}
-      >
-        Discount Cologne For Men
-      </div>
-      <div style={{ display: "flex" }}>
-        <SIdebar  />
-        <MainContent />
-      </div>
+    <div style={{ display: "flex" }}>
+      <SIdebar applyFilters={applyFilters} />
+      <MainContent filteredProducts={filteredProducts} />
     </div>
   );
 };
