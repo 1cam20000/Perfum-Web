@@ -9,7 +9,6 @@ const WomanPerfum = () => {
   const [filteredProducts, setFilteredProducts] = useState(dataKey);
 
   const applyFilters = (filters) => {
-    // Áp dụng bộ lọc vào danh sách sản phẩm
     let filtered = dataKey;
     if (filters.gender.length > 0) {
       filtered = filtered.filter((product) =>
