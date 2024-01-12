@@ -23,7 +23,7 @@ const TopBrands = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              width: "276px",
+              width: "350px",
               height: "130px",
               padding: "10px 10px 20px 10px",
               background: "#fff",
@@ -51,7 +51,7 @@ const TopBrands = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              width: "276px",
+              width: "350px",
               height: "130px",
               padding: "10px 10px 20px 10px",
               background: "#fff",
@@ -78,7 +78,7 @@ const TopBrands = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              width: "276px",
+              width: "350px",
               height: "130px",
               padding: "10px 10px 20px 10px",
               background: "#fff",
@@ -111,7 +111,7 @@ const TopBrands = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              width: "276px",
+              width: "350px",
               height: "130px",
               padding: "10px 10px 20px 10px",
               background: "#fff",
@@ -139,7 +139,7 @@ const TopBrands = () => {
             style={{
               display: "flex",
               flexDirection: "row",
-              width: "276px",
+              width: "350px",
               height: "130px",
               padding: "10px 10px 20px 10px",
               background: "#fff",
@@ -160,14 +160,14 @@ const TopBrands = () => {
                 margin: "auto 0",
               }}
             >
-              Chanel{" "}
+              Jimmy Choo{" "}
             </NavLink>
           </div>
           <div
             style={{
               display: "flex",
               flexDirection: "row",
-              width: "276px",
+              width: "350px",
               height: "130px",
               padding: "10px 10px 20px 10px",
               background: "#fff",

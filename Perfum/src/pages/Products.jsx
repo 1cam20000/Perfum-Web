@@ -3,7 +3,7 @@ import SIdebar from "../components/SIdebar";
 import MainContent from "../components/MainContent";
 import { AppContext } from "../App";
 
-const ManPerfum = () => {
+const Products = () => {
   const { dataKey } = useContext(AppContext);
 
   const [filteredProducts, setFilteredProducts] = useState(dataKey);
@@ -31,4 +31,4 @@ const ManPerfum = () => {
   );
 };
 
-export default ManPerfum;
+export default Products;

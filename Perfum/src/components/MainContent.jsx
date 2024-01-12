@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
-import { Card, Col, Row } from "antd";
+import { Button, Card, Col, Modal, Row } from "antd";
 import { NavLink } from "react-router-dom";
 const { Meta } = Card;
-const MainContent = () => {
-  const { dataKey } = useContext(AppContext);
+const MainContent = ({filteredProducts}) => {
   return (
     <div
       style={{
-        width: "100vw",
+        width: "90%",
+        marginLeft:"200px"
       }}
     >
       <Row>
-        {dataKey.map((item) => {
+        {filteredProducts.map((item) => {
           return (
-            <NavLink to="" key={item.id}>
+            <NavLink to={`products/${item.id}`} key={item.id}>
               <Col>
                 <Card
                   key={item.id}
@@ -29,8 +29,8 @@ const MainContent = () => {
                   />
                   <div style={{ textAlign: "center" }}>
                     <h4>Brand : {item.brand}</h4>
-                    <p>{item.gender}</p>
-                    <p>{item.price} </p>
+                    <p>for : {item.gender}</p>
+                    <p>price : As low as {item.price}.000(VND) </p>
                   </div>
                 </Card>
               </Col>
@@ -38,6 +38,7 @@ const MainContent = () => {
           );
         })}
       </Row>
+      
     </div>
   );
 };
