@@ -40,8 +40,8 @@ const Header = () => {
             gap: "15px",
           }}
         >
-          <NavLink to="/women">Women's Perfume </NavLink>
-          <NavLink to="/men">Men's Cologne </NavLink>
+          {/* <NavLink to="/women">Women's Perfume </NavLink> */}
+          {/* <NavLink to="/men">Men's Cologne </NavLink> */}
           <NavLink to="/products">In Stock</NavLink>
         </div>
       </div>
