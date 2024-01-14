@@ -3,18 +3,18 @@ import { AppContext } from "../App";
 import { Button, Card, Col, Modal, Row } from "antd";
 import { NavLink } from "react-router-dom";
 const { Meta } = Card;
-const MainContent = ({filteredProducts}) => {
+const MainContent = ({ filteredProducts }) => {
   return (
     <div
       style={{
         width: "90%",
-        marginLeft:"200px"
+        marginLeft: "200px",
       }}
     >
       <Row>
         {filteredProducts.map((item) => {
           return (
-            <NavLink to={`products/${item.id}`} key={item.id}>
+            <NavLink to={`/products/${item.id}`} key={item.id}>
               <Col>
                 <Card
                   key={item.id}
@@ -38,7 +38,6 @@ const MainContent = ({filteredProducts}) => {
           );
         })}
       </Row>
-      
     </div>
   );
 };

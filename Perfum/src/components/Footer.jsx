@@ -119,13 +119,13 @@ const Footer = () => {
       Footer
       <div className="join-copon">
         <div className="h2-serif">Join Our Coupon List</div>
-        <span className="deal-text">
+        <span className="deal-text" style={{color:"white"}}>
           Get the best deals and discounts on name brand fragrances and more.
         </span>
         <Space direction="vertical" style={{ marginTop: "10px" }}>
           <Search
             placeholder="Enter your email"
-            enterButton="Sign up"
+            enterButton="Join"
             size="large"
             suffix={suffix}
             onSearch={onSearch}
