@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { AppContext } from "../App";
-import { Button, Card, Col, Modal, Row } from "antd";
+import React, { useEffect } from "react";
+import { Card, Col,Row } from "antd";
 import { NavLink } from "react-router-dom";
 const { Meta } = Card;
 const MainContent = ({ filteredProducts }) => {
+
   return (
     <div
       style={{

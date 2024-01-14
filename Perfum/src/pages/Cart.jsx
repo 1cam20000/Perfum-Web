@@ -1,10 +1,12 @@
-import { Button, Card, Col } from "antd";
+import { Button, Card, Col, InputNumber } from "antd";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 const { Meta } = Card;
 
 const Cart = () => {
+  //
+
   const [productFromLocalStorage, setProductFromLocalStorage] = useState([]);
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("cart")) || [];
@@ -15,6 +17,11 @@ const Cart = () => {
     updatedCart.splice(index, 1);
     setProductFromLocalStorage(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+  //
+  const [priceOneItem, setPriceOnItem] = useState(1);
+  const handleInputNumber = (value) => {
+    setPriceOnItem(value);
   };
   return (
     <div>
@@ -60,27 +67,64 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div>
-          {productFromLocalStorage.map((item) => (
-            <Card
-              key={item.id}
-              hoverable
-              style={{ width: 240, margin: "20px" }}
-              cover={<img alt={item.name} src={item.image} />}
-            >
-              <Meta
-                title={item.name}
-                style={{ textAlign: "center" }}
-                description={item.sold}
-              />
-              <div style={{ textAlign: "center" }}>
-                <h4>Brand : {item.brand}</h4>
-                <p>for : {item.gender}</p>
-                <p>price : As low as {item.price}.000(VND) </p>
-                <Button onClick={removeFromCart}>Detle</Button>
-              </div>
-            </Card>
-          ))}
+        <div style={{ margin: "40px" }}>
+          <h1>YOUR CART:</h1>
+          <br />
+          <NavLink to="/products" >Continue Shopping</NavLink>
+          <table>
+            <thead>
+              <tr>
+                <th style={{ textAlign: "left" }}>Product Indormation</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {productFromLocalStorage.map((item) => (
+                <tr key={item.id}>
+                  <td
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      gap: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    <img src={item.image} alt="" />
+                    <div
+                      style={{
+                        display: "flex",
+                        width: "auto",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <h3>{item.name}</h3>
+                      <p>by {item.brand}</p>
+                      <p>In Stock</p>
+                      <Button onClick={removeFromCart}>Remove</Button>
+                    </div>
+                  </td>
+                  <td style={{ textAlign: "center" }}>
+                    <p> ₫{item.price}.000 Regular Price</p>
+                    <p> ₫{item.price - 100}.000 After Coupon</p>
+                  </td>
+                  <td style={{ textAlign: "center" }}>
+                    <InputNumber
+                      min={1}
+                      max={10}
+                      defaultValue={1}
+                      onChange={handleInputNumber}
+                    />
+                  </td>
+                  <td style={{ textAlign: "center" }}>
+                    ₫{item.price * priceOneItem}.000
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>

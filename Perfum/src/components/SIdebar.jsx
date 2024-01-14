@@ -1,8 +1,13 @@
-import React, { useContext, useState } from "react";
-import { Checkbox } from "@mui/material";
+import React, { useContext, useEffect, useState } from "react";
+import { Checkbox, checkboxClasses } from "@mui/material";
 import { AppContext } from "../App";
+import { useSearchParams } from "react-router-dom";
 
 const SIdebar = ({ applyFilters }) => {
+  const [searchParams, setSearchPrames] = useSearchParams();
+
+  //
+
   const { dataKey } = useContext(AppContext);
   const [filters, setFilters] = useState({ gender: [], brand: [] });
 
@@ -26,7 +31,7 @@ const SIdebar = ({ applyFilters }) => {
         flexDirection: "column",
         width: "300px",
         padding: "30px",
-        position:"fixed"
+        position: "fixed",
       }}
     >
       <div>
@@ -36,6 +41,7 @@ const SIdebar = ({ applyFilters }) => {
             <Checkbox
               type="checkbox"
               value="men"
+              defaultChecked={searchParams.get("gender") === "men"}
               onChange={() => handleCheckboxChange("gender", "men")}
             />
             Men
@@ -43,6 +49,7 @@ const SIdebar = ({ applyFilters }) => {
           <label>
             <Checkbox
               value="women"
+              defaultChecked={searchParams.get("gender") === "women"}
               onChange={() => handleCheckboxChange("gender", "women")}
             />
             Women
@@ -51,10 +58,11 @@ const SIdebar = ({ applyFilters }) => {
       </div>
       <div>
         <h2>Brand</h2>
-        <div style={{display:"flex", flexDirection:"column"}} >
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {brands.map((brand) => (
             <label key={brand}>
               <Checkbox
+                defaultChecked={searchParams.get("brand") === brand}
                 type="checkbox"
                 value={brand}
                 onChange={() => handleCheckboxChange("brand", brand)}

@@ -33,12 +33,13 @@ const TopBrands = () => {
             <div className="imgBrand">
               <img
                 src="https://img.fragrancex.com/images/assets/product%20images/dolce-gabbana.jpg"
-                alt="Dolce &amp; Gabbana"
+                alt="Dolce & Gabbana"
                 width="120"
                 height="120"
               />{" "}
             </div>
             <NavLink
+              to="/products?brand=Dolce & Gabbana"
               style={{
                 margin: "auto 0",
               }}
@@ -67,6 +68,7 @@ const TopBrands = () => {
               />
             </div>
             <NavLink
+              to="/products?brand=Calvin Klein"
               style={{
                 margin: "auto 0",
               }}
@@ -95,6 +97,7 @@ const TopBrands = () => {
               />
             </div>
             <NavLink
+              to="/products?brand=Montblanc"
               style={{
                 margin: "auto 0",
               }}
@@ -128,6 +131,7 @@ const TopBrands = () => {
               />
             </div>
             <NavLink
+              to="/products?brand=Chistian Dior"
               style={{
                 margin: "auto 0",
               }}
@@ -156,6 +160,7 @@ const TopBrands = () => {
               />
             </div>
             <NavLink
+              to="/products?brand=Jimmy Choo"
               style={{
                 margin: "auto 0",
               }}
@@ -184,6 +189,7 @@ const TopBrands = () => {
               />
             </div>
             <NavLink
+              to="/products?brand=Versace"
               style={{
                 margin: "auto 0",
               }}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SIdebar from "../components/SIdebar";
 import MainContent from "../components/MainContent";
 import { AppContext } from "../App";
@@ -9,6 +9,7 @@ const ManPerfum = () => {
   const [filteredProducts, setFilteredProducts] = useState(dataKey);
 
   const applyFilters = (filters) => {
+    console.log(filters);
     let filtered = dataKey;
     if (filters.gender.length > 0) {
       filtered = filtered.filter((product) =>

@@ -6,33 +6,76 @@ import { IoCartOutline } from "react-icons/io5";
 const Header = () => {
   return (
     <>
-      <div id="header">
-        <div style={{ display: "flex", flexDirection: "row", gap: "15px" }}>
+      <div id="header" >
+        <div style={{ display: "flex", flexDirection: "row" }}>
           <NavLink
             to="/"
             style={{
-              fontSize: "20px",
+              fontSize: "30px",
             }}
           >
             FragranceX
           </NavLink>
-          <Input placeholder="Search" />
-          <NavLink to="/sign" style={{ width: "80px" }}>
-            Sign In
-          </NavLink>
-          <NavLink
-            to="/cart"
+          <div
             style={{
-              width: "90px",
+              paddingTop: "10px",
               display: "flex",
-              justifyContent: "center",
-              textAlign: "center",
-              gap: "5px",
+              flexDirection: "row",
+              margin: "0 auto",
             }}
           >
-            <IoCartOutline size={30} />
-            Cart
-          </NavLink>
+            <NavLink
+              to="/freeShipping"
+              style={{ border: "1px solid white", padding: "5px" }}
+            >
+              FREE SHIPPING
+            </NavLink>
+            <span style={{ color: "white", padding:"5px" }}>
+              , Item Ship Out Today -{" "}
+            </span>
+            <NavLink to="/products">
+              <div id="item">
+                <div id="highlight"></div>
+                <span style={{ color: "white"}}>
+                  Order Now!!!
+                </span>
+              </div>
+            </NavLink>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              position: "absolute",
+              right: "20px",
+            }}
+          >
+            <NavLink
+              to="/sign"
+              style={{
+                width: "80px",
+                display: "flex",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              Sign In
+            </NavLink>
+            <NavLink
+              to="/cart"
+              style={{
+                width: "90px",
+                display: "flex",
+                justifyContent: "center",
+                textAlign: "center",
+                gap: "5px",
+                marginRight: "10px",
+              }}
+            >
+              <IoCartOutline size={30} />
+              Cart
+            </NavLink>
+          </div>
         </div>
         <div
           style={{
@@ -40,8 +83,8 @@ const Header = () => {
             gap: "15px",
           }}
         >
-          <NavLink to="/women">Women's Perfume </NavLink>
-          <NavLink to="/men">Men's Cologne </NavLink>
+          <NavLink to="/products?gender=women">Women's Perfume </NavLink>
+          <NavLink to="/products?gender=men">Men's Cologne </NavLink>
           <NavLink to="/products">In Stock</NavLink>
         </div>
       </div>

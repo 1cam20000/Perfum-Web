@@ -1,18 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../App";
-import { Button, Image } from "antd";
+import { Alert, Button } from "antd";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetail = () => {
   //
 
   const { dataKey } = useContext(AppContext);
-  // console.log(dataKey);
   const params = useParams();
-  console.log(params.ID);
   const newData = dataKey.find((item) => item.id == params?.ID);
-  console.log(newData);
+  // console.log(newData);
 
   //
   const today = new Date();
@@ -31,7 +30,8 @@ const ProductDetail = () => {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     cartItems.push(newData);
     localStorage.setItem("cart", JSON.stringify(cartItems));
-    toast.success("Product added to cart");
+    <Alert message="Success Add" type="success" />;
+    alert("success add");
   };
   return (
     <div
@@ -116,6 +116,7 @@ const ProductDetail = () => {
           </Button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -14,7 +14,12 @@ const suffix = (
 );
 
 const Footer = () => {
-  const onSearch = (value, _e, info) => console.log(info?.source, value);
+  const onSearch = (value, _e, info) => {
+    console.log(info?.source, value);
+    const userMail = JSON.parse(localStorage.getItem("email for coupon")) || [];
+    userMail.push(value);
+    localStorage.setItem("email for coupon", JSON.stringify(userMail));
+  };
   return (
     <div
       style={{
@@ -119,7 +124,7 @@ const Footer = () => {
       Footer
       <div className="join-copon">
         <div className="h2-serif">Join Our Coupon List</div>
-        <span className="deal-text" style={{color:"white"}}>
+        <span className="deal-text" style={{ color: "white" }}>
           Get the best deals and discounts on name brand fragrances and more.
         </span>
         <Space direction="vertical" style={{ marginTop: "10px" }}>

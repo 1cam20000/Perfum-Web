@@ -34,7 +34,7 @@ const BestSeller = () => {
         }}
       >
         {lowestPriceProducts.map((item) => (
-          <NavLink key={item.id}>
+          <NavLink to={`/products/${item.id}`}  key={item.id}>
             <Row>
               <Col span={5}>
                 <Card
@@ -53,9 +53,9 @@ const BestSeller = () => {
                     <p>for : {item.gender}</p>
                     <p>
                       price :{" "}
-                      <p style={{ color: "red" }}>
+                      <span style={{ color: "red" }}>
                         As low as {item.price}.000(VND)
-                      </p>{" "}
+                      </span>{" "}
                     </p>
                   </div>
                 </Card>

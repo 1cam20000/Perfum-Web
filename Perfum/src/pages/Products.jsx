@@ -1,10 +1,25 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SIdebar from "../components/SIdebar";
 import MainContent from "../components/MainContent";
 import { AppContext } from "../App";
+import { useSearchParams } from "react-router-dom";
 
 const Products = () => {
   const { dataKey } = useContext(AppContext);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("gender")) {
+      applyFilters({ gender: [searchParams.get("gender")] });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (searchParams.get("brand")) {
+      applyFilters({ gender: [searchParams.get("brand")] });
+    }
+  },[]);
 
   const [filteredProducts, setFilteredProducts] = useState(dataKey);
 
@@ -15,7 +30,7 @@ const Products = () => {
         filters.gender.includes(product.gender)
       );
     }
-    if (filters.brand.length > 0) {
+    if (filters.brand) {
       filtered = filtered.filter((product) =>
         filters.brand.includes(product.brand)
       );

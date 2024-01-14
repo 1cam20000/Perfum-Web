@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import LoginForm from "./pages/Login";
 import ProductDetail from "./pages/ProductDetail";
 import Products from "./pages/Products";
+import { FrShopping } from "./pages/FreeShipping";
 
 export const AppContext = createContext(null);
 
@@ -456,12 +457,21 @@ function App() {
         <div style={{ width: "100vw", height: "100px" }}></div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/men" element={<ManPerfum />} />
-          <Route path="/women" element={<WomanPerfum />} />
+          <Route path="/products?gender=men" element={<Products />} />
+          <Route path="/products?gender=women" element={<Products />} />
           <Route path="/products" element={<Products />} />
           <Route path="/sign" element={<LoginForm />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:ID" element={<ProductDetail />} />
+          <Route path="/freeShipping" element={<FrShopping />} />
+          {/*  */}
+          <Route path="/products?brand=Dolce & Gabbana" element={<Products />} />
+          <Route path="/products?brand=Calvin Klein" element={<Products />} />
+          <Route path="/products?brand=Montblanc" element={<Products />} />
+          <Route path="/products?brand=Chistian Dior" element={<Products />} />
+          <Route path="/products?brand=Jimmy Choo" element={<Products />} />
+          <Route path="/products?brand=Versace" element={<Products />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>

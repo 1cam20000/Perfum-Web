@@ -126,18 +126,117 @@ input[type="checkbox"]:focus + span::before {
 }
 .info {
   display: flex;
-  width: 70%;
   flex-direction: column;
   gap: 10px;
 }
 .infor h3 {
   color: #22165e;
 }
-.right{
+.right {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
-.btn{
+.btn {
   text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #800080);
+}
+
+.login-form {
+  width: 300px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  color: #800080;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background: #800080;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid #e9e6ee;
+}
+tr th {
+  padding: 10px 20px;
+  color: #4204a9;
+}
+tr td {
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+.free {
+  display: flex;
+}
+
+.free_1 {
+  width: 280px;
+}
+
+.free_2 {
+  width: 500px;
+}
+
+.free_1,
+.free_2 {
+  padding: 10px;
+  box-sizing: border-box;
+}
+#highlight {
+  display: inline-block;
+  position: absolute;
+  z-index: -1;
+  background-color: #f01092;
+  height: 40px; 
+  width: 0%;
+  transition: width 0.5s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#item {
+  width: initial;
+  padding: 5px;
+}
+
+#item:hover #highlight{
+  /* hardcoded */
+  width: 300px; 
 }

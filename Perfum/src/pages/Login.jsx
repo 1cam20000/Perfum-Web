@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/Users/z4/Documents/mindx/perfum/Perfum-Web/Perfum/src/styles/Login.css";
 
 const LoginForm = () => {
   const [form, setForm] = useState("login");
