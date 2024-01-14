@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 #copyRight {
   background-color: #302aaf;
@@ -55,7 +55,7 @@
   flex-direction: column;
   gap: 15px;
   width: 100vw;
-  position: fixed; 
+  position: fixed;
   z-index: 100000;
 }
 #header a {
@@ -123,4 +123,21 @@ input[type="checkbox"]:focus + span::before {
   gap: 20px;
   color: #22165e;
   font-size: 35px;
+}
+.info {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  gap: 10px;
+}
+.infor h3 {
+  color: #22165e;
+}
+.right{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.btn{
+  text-align: center;
 }
